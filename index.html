@@ -11,22 +11,28 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <div class = "container">
+    <header class = "header" role ="banner">
         <h1>Your Bookmarks</h1>
         <form id = "js-bookmarks-form">
-            <button type="button">Add Bookmark</button>
+            <button type="button" id ="js-add-item-form">Add Bookmark</button>
             <div class ="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Filter by Rating</button>
-                <div class="dropdown-content">
-                    <a href="#">5 Stars</a>
-                    <a href="#">4 Stars</a>
-                    <a href="#">3 Stars</a>
-                    <a href="#">2 Stars</a>
-                    <a href="#">1 Star</a>
-                </div>
+                <label id="rating">Filter by Rating</label>
+                <select id="rating">
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Stars</option>
+                </select>
             </div>
         </form>
-    </div>
+     </header>
+     <form id ="add-new-form">
+         <input id="title" type="text" placeholder="Add Title">
+         <input id="link" type="text" placeholder="Add Link">
+         <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
+         <input type="radio" id="rating-button">
+     </form>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="scripts/api.js"></script>
     <script type="text/javascript" src="scripts/Item.js"></script>
