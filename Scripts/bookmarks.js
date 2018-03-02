@@ -2,13 +2,12 @@
 'use strict';
 /* global store, api */
 const bookmarks = (function() {
+   
     function getIdFromElement(item){
-        return $(item).parents('li').data('item-id';)
+        return $(item).parents('li').data('item-id');
     };
 
     function generateItemElement(item){
-        
-        
         return `<li>
         <div class="bookmark-entry">
             <span class="bookmark-item">${item.title}</span>
@@ -25,22 +24,27 @@ const bookmarks = (function() {
 
     };
     function generateAddItemForm(item){
-        return ` <form id ="add-new-form">
-        <input id="title" type="text" placeholder="Add Title">
-        <input id="link" type="text" placeholder="Add Link">
-        <div class="add-new-description">
-        <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
-        </div>
-        <input type="radio" name="rating-button" value="1 star">1 star<br>
-        <input type="radio" name="rating-button" value="2 stars">2 stars<br>
-        <input type="radio" name="rating-button" value="3 stars">3 stars<br>
-        <input type="radio" name="rating-button" value="4 stars">4 stars<br>
-        <input type="radio" name="rating-button" value="5 stars">5 stars<br>
+        // return ` <form id ="add-new-form">
+        // <input id="title" type="text" placeholder="Add Title">
+        // <input id="link" type="text" placeholder="Add Link">
+        // <div class="add-new-description">
+        // <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
+        // </div>
+        // <input type="radio" name="rating-button" value="1 star">1 star<br>
+        // <input type="radio" name="rating-button" value="2 stars">2 stars<br>
+        // <input type="radio" name="rating-button" value="3 stars">3 stars<br>
+        // <input type="radio" name="rating-button" value="4 stars">4 stars<br>
+        // <input type="radio" name="rating-button" value="5 stars">5 stars<br>
     
-        <button class="js-submit-item">Submit</button>
-        </form>`;
+        // <button class="js-submit-item">Submit</button>
+        // </form>`;
+    };
+    function generateItemString(list) {
+        const item = list.map((item)=> generateItemElement(item));
+        return item.join('');
     };
     function expandedBookmarkItem(item){
+        
         return `
         <li class="bookmark-item" data-item-id="${item.id}">
         <h2>${item.title}</h2>
@@ -52,10 +56,6 @@ const bookmarks = (function() {
         </div>
         </li>`;
     };
-    function generateItemString(list) {
-        const item = list.map((item)=> generateItemElement(item));
-        return item.join('');
-    }
     function handleNewBookmarkSubmit(){
         $('#add-new-form').submit(function (event) {
             event.preventDefault();
@@ -64,7 +64,7 @@ const bookmarks = (function() {
             const newUrl = $('#url').val();
             const newRating = $('input[type="radio"][name="rating"]:checked').val();
       
-            api.createBookmark(newTitle, newUrl, newDesc, newRating, function(response){
+            api.createItem(newTitle, newUrl, newDesc, newRating, function(response){
               response.expanded = false;
               store.addItem(response);
               store.toggleAddFormDisplayed();
@@ -110,7 +110,7 @@ const bookmarks = (function() {
         handleExpandItem();
         handleDeleteBookmark();
         handleDisplayAddForm();
-    }
+    };
    return {
        render: render,
        bindEventListeners: bindEventListeners,

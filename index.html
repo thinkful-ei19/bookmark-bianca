@@ -28,13 +28,29 @@
                         </select>
                     </span>
                 </div>
-            </form>
-            <ul class="bookmark-list js-bookmark-list"></ul>    
+            </form>   
          </header>
     </div>
     <br>
-    <div class="add-new-item">
+    <div class="add-new-item hidden">
+        <h2>Add New Bookmark</h2>
+        <form id ="add-new-form">
+        <input id="title" type="text" placeholder="Add Title">
+        <input id="link" type="text" placeholder="Add Link">
+        <div class="add-new-description">
+        <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
+        </div>
+        <input type="radio" name="rating-button" value="1 star">1 star<br>
+        <input type="radio" name="rating-button" value="2 stars">2 stars<br>
+        <input type="radio" name="rating-button" value="3 stars">3 stars<br>
+        <input type="radio" name="rating-button" value="4 stars">4 stars<br>
+        <input type="radio" name="rating-button" value="5 stars">5 stars<br>
+    
+        <button class="js-submit-item">Submit</button>
+        </form>
     </div>
+    <ul class="bookmark-list js-bookmark-list"></ul> 
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="Scripts/api.js"></script>
     <script type="text/javascript" src="Scripts/store.js"></script>
