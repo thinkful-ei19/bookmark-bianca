@@ -16,7 +16,7 @@
             <h1>Your Bookmarks</h1>
             <form id="js-bookmarks-form">
                 <div class="header-buttons">
-                <button type="button" id="js-add-item-form">Add Bookmark</button>
+                <button class="add-bookmark-button" type="button" id="js-add-item-form">Add Bookmark</button>
                     <span class="dropdown">
                         <label id="rating">Filter by Rating</label>
                         <select id="rating">
@@ -29,54 +29,14 @@
                     </span>
                 </div>
             </form>
-            <ul class="bookmark-list js-bookmark-list"></ul>
-                <li>
-                    <div class="bookmark-entry">
-                        <span class="bookmark-item">Lean Analytics</span>
-                        <span class="bookmark-description">Description of bookmark
-                        <a href="https://www.amazon.com">link here</a>
-                        <span class="bookmarks-control">
-                            <button class="bookmark-delete">
-                                <span class="button-label">X</span>
-                            </button>
-                        </span>
-                    </div>
-                </li>
-                <li>
-                    <div class="bookmark-entry">
-                        <span class="bookmark-item">Google</span>
-                        <span class="bookmark-description">Description of bookmark</span>
-                        <a href="https://google.com">link here</a>
-                        <span class="bookmarls-control">
-                            <button class="bookmark-delete">
-                                    <span class="button-label">X</span>
-                            </button>
-                        </span>
-                    </div>
-                </li>
+            <ul class="bookmark-list js-bookmark-list"></ul>    
          </header>
     </div>
     <br>
     <div class="add-new-item">
-        <form id ="add-new-form">
-            <input id="title" type="text" placeholder="Add Title">
-            <input id="link" type="text" placeholder="Add Link">
-            <div class="add-new-description">
-            <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
-            </div>
-            <input type="radio" name="rating-button" value="1 star">1 star<br>
-            <input type="radio" name="rating-button" value="2 stars">2 stars<br>
-            <input type="radio" name="rating-button" value="3 stars">3 stars<br>
-            <input type="radio" name="rating-button" value="4 stars">4 stars<br>
-            <input type="radio" name="rating-button" value="5 stars">5 stars<br>
-            
-            <button class="js-submit-item">Submit</button>
-            
-        </form>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="Scripts/api.js"></script>
-    <script type="text/javascript" src="Scripts/Item.js"></script>
     <script type="text/javascript" src="Scripts/store.js"></script>
     <script type="text/javascript" src="Scripts/bookmarks.js"></script>
     <script type="text/javascript" src="Scripts/index.js"></script>

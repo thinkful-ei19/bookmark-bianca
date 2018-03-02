@@ -1,4 +1,6 @@
 //use this place to test
+'use strict';
+/* global store, api, bookmarks */
 $(document).ready(function() {
     bookmarks.bindEventListeners();
     bookmarks.render();
