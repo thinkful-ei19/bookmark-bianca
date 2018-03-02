@@ -8,37 +8,67 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="Styles/index.css">
 </head>
 <body>
-    <header class = "header" role ="banner">
-        <h1>Your Bookmarks</h1>
-        <form id = "js-bookmarks-form">
-            <button type="button" id ="js-add-item-form">Add Bookmark</button>
-            <div class ="dropdown">
-                <label id="rating">Filter by Rating</label>
-                <select id="rating">
-                    <option value="5">5 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="2">2 Stars</option>
-                    <option value="1">1 Stars</option>
-                </select>
-            </div>
+    <div class="container">
+        <header class="header" role="banner">
+            <h1>Your Bookmarks</h1>
+            <form id="js-bookmarks-form">
+                <button type="button" id="js-add-item-form">Add Bookmark</button>
+                <div class="dropdown">
+                    <label id="rating">Filter by Rating</label>
+                    <select id="rating">
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Stars</option>
+                    </select>
+                </div>
+            </form>
+            <ul class="bookmark-list js-bookmark-list"></ul>
+                <li>
+                    <span class="bookmark-item">Lean Analytics</span>
+                    <span class="bookmark-description">Description of bookmark
+                        <a href="https://www.amazon.com/Lean-Analytics-Better-Startup-Faster/dp/1449335675">link here</a>
+                    </span>
+                    <div class="bookmarks-control">
+                        <button class="bookmark-delete">
+                            <span class="button-label">delete</span>
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <span class="bookmark-item">Google</span>
+                    <span class="bookmark-description">Description of bookmark
+                        <a href="https://google.com">link here</a>
+                    </span>
+                    </p>
+                    <button class="bookmark-delete">
+                            <span class="button-label">delete</span>
+                    </button>
+                </li>
+         </header>
+    </div>
+        <form id ="add-new-form">
+            <input id="title" type="text" placeholder="Add Title">
+            <input id="link" type="text" placeholder="Add Link">
+            <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
+            <input type="radio" name="rating-button" value="1 star">1 star<br>
+            <input type="radio" name="rating-button" value="2 stars">2 stars<br>
+            <input type="radio" name="rating-button" value="3 stars">3 stars<br>
+            <input type="radio" name="rating-button" value="4 stars">4 stars<br>
+            <input type="radio" name="rating-button" value="5 stars">5 stars<br>
+            <button class="js-submit-item">Submit</button>
         </form>
-     </header>
-     <form id ="add-new-form">
-         <input id="title" type="text" placeholder="Add Title">
-         <input id="link" type="text" placeholder="Add Link">
-         <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
-         <input type="radio" id="rating-button">
-     </form>
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="scripts/api.js"></script>
-    <script type="text/javascript" src="scripts/Item.js"></script>
-    <script type="text/javascript" src="scripts/store.js"></script>
-    <script type="text/javascript" src="scripts/bookmarks.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="Scripts/api.js"></script>
+    <script type="text/javascript" src="Scripts/Item.js"></script>
+    <script type="text/javascript" src="Scripts/store.js"></script>
+    <script type="text/javascript" src="Scripts/bookmarks.js"></script>
+    <script type="text/javascript" src="Scripts/index.js"></script>
 
 </body>
 </html>
