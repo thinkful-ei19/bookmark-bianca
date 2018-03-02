@@ -15,54 +15,65 @@
         <header class="header" role="banner">
             <h1>Your Bookmarks</h1>
             <form id="js-bookmarks-form">
+                <div class="header-buttons">
                 <button type="button" id="js-add-item-form">Add Bookmark</button>
-                <div class="dropdown">
-                    <label id="rating">Filter by Rating</label>
-                    <select id="rating">
-                        <option value="5">5 Stars</option>
-                        <option value="4">4 Stars</option>
-                        <option value="3">3 Stars</option>
-                        <option value="2">2 Stars</option>
-                        <option value="1">1 Stars</option>
-                    </select>
+                    <span class="dropdown">
+                        <label id="rating">Filter by Rating</label>
+                        <select id="rating">
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Stars</option>
+                        </select>
+                    </span>
                 </div>
             </form>
             <ul class="bookmark-list js-bookmark-list"></ul>
                 <li>
-                    <span class="bookmark-item">Lean Analytics</span>
-                    <span class="bookmark-description">Description of bookmark
-                        <a href="https://www.amazon.com/Lean-Analytics-Better-Startup-Faster/dp/1449335675">link here</a>
-                    </span>
-                    <div class="bookmarks-control">
-                        <button class="bookmark-delete">
-                            <span class="button-label">delete</span>
-                        </button>
+                    <div class="bookmark-entry">
+                        <span class="bookmark-item">Lean Analytics</span>
+                        <span class="bookmark-description">Description of bookmark
+                        <a href="https://www.amazon.com">link here</a>
+                        <span class="bookmarks-control">
+                            <button class="bookmark-delete">
+                                <span class="button-label">X</span>
+                            </button>
+                        </span>
                     </div>
                 </li>
                 <li>
-                    <span class="bookmark-item">Google</span>
-                    <span class="bookmark-description">Description of bookmark
+                    <div class="bookmark-entry">
+                        <span class="bookmark-item">Google</span>
+                        <span class="bookmark-description">Description of bookmark</span>
                         <a href="https://google.com">link here</a>
-                    </span>
-                    </p>
-                    <button class="bookmark-delete">
-                            <span class="button-label">delete</span>
-                    </button>
+                        <span class="bookmarls-control">
+                            <button class="bookmark-delete">
+                                    <span class="button-label">X</span>
+                            </button>
+                        </span>
+                    </div>
                 </li>
          </header>
     </div>
+    <br>
+    <div class="add-new-item">
         <form id ="add-new-form">
             <input id="title" type="text" placeholder="Add Title">
             <input id="link" type="text" placeholder="Add Link">
+            <div class="add-new-description">
             <textarea name="description" rows="10" cols="30" placeholder="Add description here"></textarea>
+            </div>
             <input type="radio" name="rating-button" value="1 star">1 star<br>
             <input type="radio" name="rating-button" value="2 stars">2 stars<br>
             <input type="radio" name="rating-button" value="3 stars">3 stars<br>
             <input type="radio" name="rating-button" value="4 stars">4 stars<br>
             <input type="radio" name="rating-button" value="5 stars">5 stars<br>
+            
             <button class="js-submit-item">Submit</button>
+            
         </form>
-    
+    </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="Scripts/api.js"></script>
     <script type="text/javascript" src="Scripts/Item.js"></script>
