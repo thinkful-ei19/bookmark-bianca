@@ -2,12 +2,11 @@
 'use strict';
 /* global store, api, bookmarks */
 $(document).ready(function() {
-    bookmarks.bindEventListeners();
-    bookmarks.render();
     api.getBookmarks((items) => {
-        items.forEach((item) => store.addItem(item));
-        console.log('these are store items', store.items);
+        items.forEach((bookmark) => store.addBookmark(bookmark));
+        console.log('these are store items', store.bookmarks);
 
         bookmarks.render();
     });
+    bookmarks.handleApp();
 });

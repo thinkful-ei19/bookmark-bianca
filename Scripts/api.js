@@ -6,13 +6,7 @@ const api = (function () {
         console.log('getBookmarks ran');
         $.getJSON(BASE_URL + '/bookmarks', callback);
     }
-    const createItem = function(title, url, description, callback) {
-        const bookmark ={
-            title: title,
-            url: url,
-            description: description,
-            rating: rating,
-        }
+    const createBookmark = function(bookmark, callback) {
         const newItem = JSON.stringify(bookmark);
         $.ajax({
             url: BASE_URL + '/bookmarks',
@@ -22,8 +16,17 @@ const api = (function () {
             success: callback
         });
     };
-    const deleteItem = function(id, callback){
-        console.log(`deleteItem ran`);
+    const updateBookmark = function(id, updateData, callback) {
+        $.ajax({
+            url: BASE_URL + '/bookmarks/' + id,
+            method: 'PATCH',
+            contentType: 'application/json',
+            data: JSON.stringify(updateData),
+            success: callback
+        })
+    }
+    const deleteBookmark = function(id, callback){
+       
         $.ajax({
             url: BASE_URL + '/bookmarks/' + id,
             method: 'DELETE',
@@ -33,7 +36,8 @@ const api = (function () {
     }
     return {
         getBookmarks,
-        createItem,
-        deleteItem
+        createBookmark,
+        updateBookmark,
+        deleteBookmark
     }
 }());
