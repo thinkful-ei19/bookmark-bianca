@@ -1,4 +1,4 @@
-//event listeners
+
 'use strict';
 /* global store, api */
 const bookmarks = (function () {
